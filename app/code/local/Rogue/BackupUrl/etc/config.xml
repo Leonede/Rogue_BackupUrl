@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Rogue_BackupUrl>
+            <version>0.1.0</version>
+        </Rogue_BackupUrl>
+    </modules>
+
+    <global>
+        <models>
+            <rgburl>
+                <class>Rogue_BackupUrl_Model</class>
+            </rgburl>
+        </models>
+
+        <helpers>
+            <rgburl>
+                <class>Rogue_BackupUrl_Helper</class>
+            </rgburl>
+        </helpers>
+
+        <resources>
+            <rgburl_setup>
+                <setup>
+                    <module>Rogue_BackupUrl</module>
+                </setup>
+            </rgburl_setup>
+        </resources>
+
+        <events>
+            <controller_action_predispatch_catalog_product_noRoute>
+                <observers>
+                    <rogue_backupurl>
+                        <class>Rogue_BackupUrl_Model_Observer</class>
+                        <method>controllerPredispatch</method>
+                    </rogue_backupurl>
+                </observers>
+            </controller_action_predispatch_catalog_product_noRoute>
+            <controller_action_predispatch_catalog_category_noRoute>
+                <observers>
+                    <rogue_backupurl>
+                        <class>Rogue_BackupUrl_Model_Observer</class>
+                        <method>controllerPredispatch</method>
+                    </rogue_backupurl>
+                </observers>
+            </controller_action_predispatch_catalog_category_noRoute>
+            <catalog_product_delete_before>
+                <observers>
+                    <rogue_backupurl>
+                        <class>Rogue_BackupUrl_Model_Observer</class>
+                        <method>productDeleteBefore</method>
+                    </rogue_backupurl>
+                </observers>
+            </catalog_product_delete_before>
+            <catalog_category_delete_before>
+                <observers>
+                    <rogue_backupurl>
+                        <class>Rogue_BackupUrl_Model_Observer</class>
+                        <method>categoryDeleteBefore</method>
+                    </rogue_backupurl>
+                </observers>
+            </catalog_category_delete_before>
+        </events>
+    </global>
+</config>

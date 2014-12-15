@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Rogue_BackupUrl>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Rogue_BackupUrl>
+    </modules>
+</config>
